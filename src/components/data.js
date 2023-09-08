@@ -88,7 +88,7 @@ const data = [
 
 {
     id : 4,
-    question : "The mind is blank 'Tabula Rasa' was attributed to?",
+    question : "The mind is a blank state 'Tabula Rasa' was attributed to?",
     answer : [
     {
         text : "Socrates",
