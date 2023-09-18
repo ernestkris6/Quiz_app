@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 A quiz App just like the who wants to be a millionaire game
+New Questions arriving soon!
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
