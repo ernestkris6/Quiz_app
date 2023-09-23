@@ -130,7 +130,7 @@ const data = [
     },
 
     {
-        text : "Daniel Redcliff",
+        text : "Daniel Radcliff",
         correct : true
     },
 
