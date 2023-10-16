@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 A quiz App just like the who wants to be a millionaire game
-New Questions arriving soon!
+New Questions arriving soon!!
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
