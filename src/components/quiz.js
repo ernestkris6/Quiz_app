@@ -66,10 +66,9 @@ export default function Quiz({data, setTimeOut, questionNumber, setQuestionNumbe
         <div className='questions'>{question?.question}</div>
         <div className='answers'>
           {question?.answer.map(a=> (
-              <div className={selectedAnswer === a ? clickedAnswer : 'answer'} onClick={()=> handleClick(a)}>{a.text}</div>
-          ))}
-            
-            
+              <div className={selectedAnswer === a ? clickedAnswer : 'answer'} 
+              onClick={()=> handleClick(a)}>{a.text}</div>
+          ))}            
         </div>
     </div>
   )
