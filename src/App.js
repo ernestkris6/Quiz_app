@@ -38,7 +38,8 @@ function App() {
     ].reverse();
 
     useEffect(() => {
-      questionNumber > 1 && setEarned(moneyPyramid.find(m => m.id === questionNumber -1).amount)
+      questionNumber > 1 && 
+      setEarned(moneyPyramid.find(m => m.id === questionNumber -1).amount)
         }, [moneyPyramid, questionNumber])
     
 
