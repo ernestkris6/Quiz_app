@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 const style= {
@@ -17,6 +17,10 @@ function Converter() {
     const [toCurr, setToCurr] = useState("EUR");
     // const [] = useState("");
 
+    // useEffect(function(){
+    //     const res = fetch(`https://`)
+    // })
+
   return (
     <div style={style}>
         <input 
@@ -25,13 +29,13 @@ function Converter() {
         value={amount}
         onChange={(e)=> setAmount(e.target.value)}
         />
-        <select>
+        <select value={fromCur} onChange={(e)=> setFromCurr(e.target.value)}>
             <option>USD</option>
             <option>EUR</option>
             <option>CAN</option>
         </select>
 
-        <select>
+        <select value={toCurr} onChange={(e)=> setToCurr(e.target.value)}>
             <option>EUR</option>
             <option>USD</option>
             <option>CAN</option>
