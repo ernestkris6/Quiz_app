@@ -15,7 +15,7 @@ function Converter() {
     const [amount, setAmount] = useState(1);
     const [fromCur, setFromCurr] = useState("EUR");
     const [toCurr, setToCurr] = useState("USD");
-    const [output, setOutput] = useState("");
+    const [output, setOutput] = useState(0);
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(function(){
@@ -30,7 +30,7 @@ function Converter() {
             setIsLoading(false)
         }
 
-        if(fromCur === toCurr) return setAmount(amount);
+        if(fromCur === toCurr) return setOutput(amount);
         
         getConversion();
     }, [amount, fromCur, toCurr])
