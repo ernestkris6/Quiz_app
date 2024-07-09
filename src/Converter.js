@@ -15,14 +15,15 @@ function Converter() {
     const [amount, setAmount] = useState(1);
     const [fromCur, setFromCurr] = useState("USD");
     const [toCurr, setToCurr] = useState("EUR");
-    const [] = useState("");
+    const [output, setOutput] = useState(0);
 
     useEffect(function(){
-        function getConversion() {
-            const res = fetch(`https://api.frankfurter.app/latest?amount=100&from=EUR&to=USD`)
+        async function getConversion() {
+
+            const res = await fetch(`https://api.frankfurter.app/latest?amount=100&from=EUR&to=USD`)
     
             const data = res.json();
-            console.log(data);;
+            console.log(data)
         }
 
         getConversion();
@@ -50,7 +51,7 @@ function Converter() {
             <option>CAN</option>
         </select>
 
-        <p style={amountStyle}>AMOUNT</p>
+        <p style={amountStyle}>{output}</p>
     </div>
   )
 }
