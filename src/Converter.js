@@ -6,28 +6,29 @@ const style= {
 }
 
 const amountStyle = {
-    fontSize : "12px",
+    fontSize : "16px",
     marginTop : "12px"
 }
 
 function Converter() {
 
     const [amount, setAmount] = useState(1);
-    const [fromCur, setFromCurr] = useState("USD");
-    const [toCurr, setToCurr] = useState("EUR");
-    const [output, setOutput] = useState(0);
+    const [fromCur, setFromCurr] = useState("EUR");
+    const [toCurr, setToCurr] = useState("USD");
+    const [output, setOutput] = useState("");
 
     useEffect(function(){
         async function getConversion() {
 
-            const res = await fetch(`https://api.frankfurter.app/latest?amount=100&from=EUR&to=USD`)
+            const res = await fetch(`https://api.frankfurter.app/latest?amount=${amount}&from=${fromCur}&to=${toCurr}`)
     
-            const data = res.json();
-            console.log(data)
+            const data = await res.json();
+            setOutput(data.rates[toCurr])
         }
 
+        
         getConversion();
-    })
+    }, [amount, fromCur, toCurr])
 
   return (
     <div style={style}>
@@ -35,7 +36,7 @@ function Converter() {
         type='text' 
         placeholder='Enter amount'
         value={amount}
-        onChange={(e)=> setAmount(e.target.value)}
+        onChange={(e)=> setAmount(Number(e.target.value))}
         />
         <select value={fromCur} onChange={(e)=> setFromCurr(e.target.value)}>
             <option>USD</option>
